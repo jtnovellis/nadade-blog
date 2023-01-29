@@ -11,6 +11,19 @@ interface PostDetailProps {
   };
 }
 
+export const revalidate = 60;
+
+export async function generateStaticParams() {
+  const query = groq`
+    *[_type == 'post'] {
+      slug
+    }
+  `;
+  const posts: Post[] = await client.fetch(query);
+  const slugs = posts.map((post) => post.slug.current);
+  return slugs.map((slug) => ({ slug }));
+}
+
 export default async function PostDetail({
   params: { slug },
 }: PostDetailProps) {
