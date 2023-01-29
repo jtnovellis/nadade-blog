@@ -2,6 +2,8 @@ import { client } from '@/lib/sanity.client';
 import urlFor from '@/lib/urlFor';
 import { groq } from 'next-sanity';
 import Image from 'next/image';
+import { PortableText } from '@portabletext/react';
+import { RichTextComponents } from '@/components/RichTextComponents';
 
 interface PostDetailProps {
   params: {
@@ -78,6 +80,7 @@ export default async function PostDetail({
           </section>
         </div>
       </section>
+      <PortableText value={post.body} components={RichTextComponents} />
     </article>
   );
 }
