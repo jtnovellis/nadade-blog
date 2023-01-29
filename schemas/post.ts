@@ -21,7 +21,8 @@ export default defineType({
     }),
     defineField({
       name: 'description',
-      title: 'Description',
+      description: 'Ingresa una breve descripcion para la publicación',
+      title: 'Descripción',
       type: 'text',
     }),
     defineField({
