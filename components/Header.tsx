@@ -14,7 +14,7 @@ export default function Header() {
             height={50}
           />
         </Link>
-        <h1>Edu. Infantil | Nayade Novellis</h1>
+        <h1>Doc. Infantil | Nayade Novellis</h1>
       </div>
       <div>
         <Link
